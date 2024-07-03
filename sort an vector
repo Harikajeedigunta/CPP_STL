@@ -1,0 +1,40 @@
+Method 1:
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int>v;
+    int number;
+    while(cin>>number)
+    {
+        v.push_back(number);
+    }
+    sort(v.begin(),v.end());
+    for(int num:v)
+    {
+        cout<<num<<" ";
+    }
+}
+
+Method 2:
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int>v;
+    int number;
+    while(cin>>number)
+    {
+        v.push_back(number);
+    }
+    sort(v.begin(),v.end());
+    for(int i=0;i<v.size();i++)
+    {
+        cout<<v[i]<<" ";
+    }
+}
+
+Input:
+5 2 8 1 4 9
+Output:
+1 2 4 5 8 9 
