@@ -1,0 +1,182 @@
+**Structures in C++**
+We know that arrays store data of the same data type. We come across many situations where We want to store a group of data of similar data types or different types. This is where Structures come into the Picture. 
+
+What is Structure? 
+The structure is the user-defined data type in C++. Structure creates the data type which can hold the multiple data types.
+
+Syntax of Structure :
+
+Struct keyword is used to create the structure. The syntax for creating structure in C++ is as follows.
+
+ struct structureName {
+     Member 1;
+     Member 2;
+     Member 3;
+     ….
+};
+Explanation:
+struct: It is the keyword used for creating the structure.
+
+structure name: It is the name of the structure. It is used while declaring the structure variables. 
+
+Member1, Member2, etc are the Members of the structure. The structure has two types of Members.
+
+Data Member: These are normal C++ variables. Inside the structure, we can create variables of different data types.
+Member Functions: These are Normal C++ Functions. These are declared inside the structure. The scope of these functions is limited to the struct only. They can be accessed using struct variables only.
+Declaring Structure Variables :
+
+Structure variables can be declared in two different ways :
+
+Declared while declaring the structure 
+A declaration like basic data types.
+ Declared while declaring the structure:
+
+struct point
+{
+    int x;
+    int y;
+} p1, p2;
+In the above struct declaration, the point is the name of the structure. p1,p2 are the variables of the type struct point. Here variables p1, and p2 are declared while structure declaration itself.
+
+A declaration like Basic Data types:
+
+struct point
+{
+    int x;
+    int y;
+};
+
+int main()
+{
+    struct point p1, p2;
+} 
+In the above Code, p1, and p2 are the struct variables. They are not declared while structure declaration. They are declared after structure declaration. Like the normal declaration of basic data types.
+
+Note: In C++ using the struct keyword while declaring variables is optional. The below code is also valid.
+
+struct point
+{
+    int x;
+    int y;
+};
+
+int main()
+{
+    point p1, p2;
+}  
+Let’s Look at Real-Life Applications where the struct is Useful: 
+
+Suppose let’s take a situation, Where we want to store the details of students in the class like the Student’s name, his rollNo, his marks, and his age. As the data belong to one student we want to group this data. But using conventional data types we cannot do it. Here we can use structure to group the data.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+struct student
+{
+    string name;
+    int rollNo;
+    int marks;
+    int age;
+};
+
+int main()
+{
+    student s1, s2;
+} 
+In the above code, the student is a structure. It contains the data member's name,rollNo, marks, and age. Which corresponds to the name of the student, his rollNo, his marks, and age. s1,s2 are variables of struct student data type, which stores the data related to student 1, student 2.
+
+Accessing the Members of the structure : 
+
+Members of the structure can be accessed using the dot  (.)  operator.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+struct student
+{
+    string name;
+    int rollNo;
+    int marks;
+    int age;
+};
+
+int main()
+{
+    student s1;
+}
+In the Above code details of the student1 can be accessed in the following way.
+
+s1.name   → gives the name of the student1
+s1.rollNo → gives the rollNo of the student1
+s1.marks  → gives the marks of the student1
+s1.age    → gives the age of the student1
+Assigning the Values to the structure Members:
+
+Values for the structure Members can be assigned in two ways 
+
+While declaring the structure 
+Using the dot (.) operator access the member and assign the values.
+Assigning the Values while Structure declaration:
+
+Code:
+
+C++
+#include <bits/stdc++.h>
+
+using namespace std;
+
+struct cricketer {
+  string name = "Virat Kohli";
+  string country = "India";
+  int jersey = 18;
+};
+
+int main() {
+  cricketer c1;
+  cout << "The cricketer's Name is: " << c1.name << endl;
+  cout << "Cricketer's Country is: " << c1.country << endl;
+  cout << "The cricketer's jersey Number is: " << c1.jersey << endl;
+}
+output:
+
+The cricketer's Name is: Virat Kohli
+
+Cricketer's Country is: India
+
+The cricketer's jersey Number is: 18
+
+In the above code, details of the cricketer like his name, country, and jersey number are assigned while declaring the struct itself. These act as defaults values for the members.
+
+Assigning values using the Dot operator:
+
+Code:
+
+C++
+#include <bits/stdc++.h>
+
+using namespace std;
+
+struct cricketer {
+  string name;
+  string country;
+  int jersey;
+};
+
+int main() {
+  cricketer c1;
+  c1.name = "Rohit Sharma";
+  c1.country = "India";
+  c1.jersey = 45;
+  cout << "Cricketer's Name is: " << c1.name << endl;
+  cout << "Cricketer's Country is: " << c1.country << endl;
+  cout << "The cricketer's jersey Number is: " << c1.jersey << endl;
+}
+Output : 
+
+Cricketer's Name is: Rohit Sharma
+
+Cricketer's Country is: India
+
+The cricketer's jersey Number is: 45
+
+We can observe that We assign the details of the cricketer by accessing the data members, Using the dot operator.
