@@ -1,0 +1,55 @@
+Hashing in C++ is a technique used to efficiently map data (often keys) to values using a hash function. A hash function takes input data and produces a fixed-size string of characters, which is typically a hash code. The hash code is then used as an index in a hash table to store and retrieve data efficiently.
+
+Here are some key points about hashing in C++:
+
+1. Hash Function
+A hash function takes an input and returns a hash code (usually an integer). The goal is to distribute keys uniformly across the hash table to minimize collisions (cases where different keys produce the same hash code).
+
+2. Hash Table
+A hash table is a data structure that maps keys to values using a hash function. It supports efficient insertion, deletion, and lookup operations.
+
+3. Standard Template Library (STL) Hash Functions
+C++ provides hash functions in the Standard Library, primarily through the std::hash template. This is commonly used with hash-based containers like std::unordered_map and std::unordered_set.
+
+Example code of frequency of elements in array.
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    //prestoring
+    int hash[13]={0};
+    for(int i=0;i<n;i++)
+    {
+        hash[arr[i]]+=1;
+    }
+    int q;
+    cin>>q;
+    while(q--)
+    {
+        int number;
+        cin>>number;
+        cout<<hash[number]<<"\n";
+    }
+}
+Input:
+5
+1 2 3 1 3
+5
+1
+4 
+2
+3
+12
+
+Output:
+2
+0
+1
+2
